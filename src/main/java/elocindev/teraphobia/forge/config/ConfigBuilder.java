@@ -43,6 +43,7 @@ public class ConfigBuilder {
             exampleConfig.lunar_event_blacklist_modwide.add("mushys_fallen_monsters");
 
             exampleConfig.enable_creeper_cena = false;
+            exampleConfig.ender_dragon_max_health = 600.0f;
 
             String defaultJson = BUILDER.toJson(exampleConfig);
             Files.writeString(file, defaultJson);

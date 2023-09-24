@@ -12,9 +12,15 @@ authors="ElocinDev"
 description='''
 A scary mod made for the Fear Nightfall modpack.
 '''
-[[dependencies.ysns]] #optional
+[[dependencies.teraphobia]] #optional
     modId="forge" 
     mandatory=true 
     versionRange="[37,)" 
     ordering="NONE"
     side="BOTH"
+[[dependencies.teraphobia]] #optional
+    modId="luna" 
+    mandatory=true 
+    versionRange="[0,)" 
+    ordering="NONE"
+    side="CLIENT"

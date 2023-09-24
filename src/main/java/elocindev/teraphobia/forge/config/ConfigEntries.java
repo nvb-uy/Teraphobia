@@ -18,4 +18,5 @@ public class ConfigEntries {
   public List<String> lunar_event_blacklist_entity = new ArrayList<>();
   public List<String> lunar_event_blacklist_modwide = new ArrayList<>();
   public boolean enable_creeper_cena = false;
+  public float ender_dragon_max_health = 600.0f;
 }
