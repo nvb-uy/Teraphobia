@@ -20,11 +20,27 @@ public class ConfigBuilder {
         if (Files.notExists(file)) {
             ConfigEntries exampleConfig = new ConfigEntries();
 
-            exampleConfig.dayonly_spawns.add("any_mod:example_entity");
-            exampleConfig.nightonly_spawns.add("any_mod:example_entity");
+            exampleConfig.removed_entities.add("mutationcraft:hazmat_helicopter");
+            
+            exampleConfig.dayonly_spawns_entity.add("any_mod:example_entity");
+            exampleConfig.nightonly_spawns_entity.add("any_mod:example_entity");
+            exampleConfig.nightonly_spawns_modwide.add("some_mods_id");
+            exampleConfig.dayonly_spawns_modwide.add("some_mods_id");
 
             exampleConfig.mutationcraft_spawn_weight = 1.0F;
             exampleConfig.ryanzombies_spawn_weight = 1.0F;
+            exampleConfig.skinandbones_spawn_weight = 1.0F;
+            exampleConfig.borninchaos_spawn_weight = 1.0F;
+            exampleConfig.theboxofhorrors_spawn_weight = 1.0F;
+            exampleConfig.fallenmonsters_spawn_weight = 1.0F;
+
+            exampleConfig.lunar_event_blacklist_entity.add("any_mod:example_entity");
+            exampleConfig.lunar_event_blacklist_modwide.add("mutationcraft");
+            exampleConfig.lunar_event_blacklist_modwide.add("kevin_trophy");
+            exampleConfig.lunar_event_blacklist_modwide.add("skinandbonesremastered");
+            exampleConfig.lunar_event_blacklist_modwide.add("born_in_chaos_v1");
+            exampleConfig.lunar_event_blacklist_modwide.add("boh");
+            exampleConfig.lunar_event_blacklist_modwide.add("mushys_fallen_monsters");
 
             String defaultJson = BUILDER.toJson(exampleConfig);
             Files.writeString(file, defaultJson);
