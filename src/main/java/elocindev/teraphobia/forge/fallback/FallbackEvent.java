@@ -1,6 +1,7 @@
 package elocindev.teraphobia.forge.fallback;
 
 import elocindev.teraphobia.forge.spawn.SpawningHandler;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event.Result;
@@ -14,6 +15,15 @@ public class FallbackEvent {
 
         if (SpawningHandler.shouldBeRemoved(event.getEntity().getLevel(), event.getEntity())) {
             event.setResult(Result.DENY);
+        }
+    }
+
+    @SubscribeEvent
+    public static void fallbackSpawnEvent(EntityJoinLevelEvent event) {
+        if (event.getLevel().isClientSide()) return;
+
+        if (SpawningHandler.shouldBeRemoved(event.getEntity().getLevel(), event.getEntity())) {
+            event.setCanceled(true);
         }
     }
 }
