@@ -42,6 +42,8 @@ public class ConfigBuilder {
             exampleConfig.lunar_event_blacklist_modwide.add("boh");
             exampleConfig.lunar_event_blacklist_modwide.add("mushys_fallen_monsters");
 
+            exampleConfig.enable_creeper_cena = false;
+
             String defaultJson = BUILDER.toJson(exampleConfig);
             Files.writeString(file, defaultJson);
         }

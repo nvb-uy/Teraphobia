@@ -15,7 +15,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(Teraphobia.MODID)
 public class Teraphobia {
     public static final String MODID = "teraphobia";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
     public static ConfigEntries Config = ConfigBuilder.loadConfig();
 
     

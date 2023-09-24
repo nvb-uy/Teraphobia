@@ -17,4 +17,5 @@ public class ConfigEntries {
   public float fallenmonsters_spawn_weight = 1.0F;
   public List<String> lunar_event_blacklist_entity = new ArrayList<>();
   public List<String> lunar_event_blacklist_modwide = new ArrayList<>();
+  public boolean enable_creeper_cena = false;
 }

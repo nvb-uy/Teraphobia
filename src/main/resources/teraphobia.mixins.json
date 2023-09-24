@@ -5,7 +5,8 @@
   "refmap": "teraphobia.refmap.json",
   "mixins": [
     "ServerWorldMixin",
-    "LunarHandlerMixin"
+    "LunarHandlerMixin",
+    "LivingEntityMixin"
   ],
   "client": [
   ],
