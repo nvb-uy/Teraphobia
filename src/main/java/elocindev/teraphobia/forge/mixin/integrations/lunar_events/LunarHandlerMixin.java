@@ -1,4 +1,4 @@
-package elocindev.teraphobia.forge.mixin;
+package elocindev.teraphobia.forge.mixin.integrations.lunar_events;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -15,6 +15,7 @@ import net.minecraft.world.entity.MobSpawnType;
 @Mixin(LunarHandler.class)
 public class LunarHandlerMixin {
     @Inject(method = "onLivingSpawn", at = @At("HEAD"), remap = false, cancellable = true)
+    // This fixes some mcreator mods basically spawning 100 times when a lunar event is active, kinda weird
     public void teraphobia_fixmcreatormodsnotworkinglol(MobSpawnType mobSpawnType, LivingEntity livingEntity, CallbackInfo info) {
         String id = EntityType.getKey(livingEntity.getType()).toString();
         if (Teraphobia.Config.lunar_event_blacklist_entity.contains(id)) {

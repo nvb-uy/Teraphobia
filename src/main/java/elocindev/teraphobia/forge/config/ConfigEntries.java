@@ -19,4 +19,6 @@ public class ConfigEntries {
   public List<String> lunar_event_blacklist_modwide = new ArrayList<>();
   public boolean enable_creeper_cena = false;
   public float ender_dragon_max_health = 600.0f;
+  public List<String> overworld_only_spawns_modwide = new ArrayList<>();
+  public boolean phanstasm_enable_stars = false;
 }

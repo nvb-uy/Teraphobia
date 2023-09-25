@@ -1,4 +1,4 @@
-package elocindev.teraphobia.forge.spawn;
+package elocindev.teraphobia.forge.worldgen;
 
 import elocindev.teraphobia.forge.Teraphobia;
 import net.minecraft.world.entity.Entity;
@@ -11,36 +11,38 @@ public class SpawningHandler {
         float random = world.random.nextFloat();
         String id = EntityType.getKey(entity.getType()).toString();
             
-        if (Teraphobia.Config.removed_entities.contains(id)) { entity.remove(RemovalReason.DISCARDED); return true; }
+        if (Teraphobia.Config.removed_entities.contains(id)) return removed(entity);
+        
+        if (!world.dimension().equals(Level.OVERWORLD)) {
+            if (Teraphobia.Config.overworld_only_spawns_modwide.contains(id)) {
+                return removed(entity);
+            }
+        }
 
         if (world.isDay()) {
             if (Teraphobia.Config.nightonly_spawns_entity.contains(id)) {
-                entity.remove(RemovalReason.DISCARDED); 
-                return true;
+                return removed(entity);
             } else {
                 for (String modid : Teraphobia.Config.nightonly_spawns_modwide) {
                     if (id.startsWith(modid)) {
-                        entity.remove(RemovalReason.DISCARDED); 
-                        return true;
+                        return removed(entity);
                     }
                 }
             }
         } else {
             if (Teraphobia.Config.dayonly_spawns_entity.contains(id)) {
-                entity.remove(RemovalReason.DISCARDED); 
-                return true;
+                return removed(entity);
             } else {
                 for (String modid : Teraphobia.Config.dayonly_spawns_modwide) {
                     if (id.startsWith(modid)) { 
-                        return true;
+                        return removed(entity);
                     }
                 }
             }
         }
 
         if (checkSpawnWeights(id, random)) {
-            entity.remove(RemovalReason.DISCARDED); 
-            return true;  
+            return removed(entity);
         }
 
         return false;
@@ -53,5 +55,10 @@ public class SpawningHandler {
                (id.startsWith("born_in_chaos_v1") && random > Teraphobia.Config.borninchaos_spawn_weight) ||
                (id.startsWith("boh") && random > Teraphobia.Config.theboxofhorrors_spawn_weight) ||
                (id.startsWith("mushys_fallen_monsters") && random > Teraphobia.Config.fallenmonsters_spawn_weight);
+    }
+
+    private static boolean removed(Entity entity) {
+        entity.remove(RemovalReason.DISCARDED);
+        return true;
     }
 }

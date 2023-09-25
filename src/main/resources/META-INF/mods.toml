@@ -1,26 +1,26 @@
 modLoader="javafml"
 loaderVersion="[37,)" 
-license="AGNYA License"
+license="All Rights Reserved"
 
 [[mods]] 
 modId="teraphobia" 
 version="1.0.0" 
 displayName="Teraphobia" 
 logoFile="icon.png" 
-credits="https://github.com/nvb-uy" 
+credits="https://github.com/nvb-uy/Teraphobia" 
 authors="ElocinDev" 
 description='''
-A scary mod made for the Fear Nightfall modpack.
+The core mod of the Fear Nightfall modpack. Adds core functionality for the modpack.
 '''
-[[dependencies.teraphobia]] #optional
+[[dependencies.teraphobia]]
     modId="forge" 
     mandatory=true 
     versionRange="[37,)" 
     ordering="NONE"
     side="BOTH"
-[[dependencies.teraphobia]] #optional
+[[dependencies.teraphobia]]
     modId="luna" 
-    mandatory=true 
+    mandatory=false 
     versionRange="[0,)" 
     ordering="NONE"
     side="CLIENT"

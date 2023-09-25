@@ -1,7 +1,7 @@
 package elocindev.teraphobia.forge.fallback;
 
 import elocindev.teraphobia.forge.Teraphobia;
-import elocindev.teraphobia.forge.spawn.SpawningHandler;
+import elocindev.teraphobia.forge.worldgen.SpawningHandler;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;

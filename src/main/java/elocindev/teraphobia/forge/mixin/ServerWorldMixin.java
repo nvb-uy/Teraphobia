@@ -9,12 +9,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import elocindev.teraphobia.forge.spawn.SpawningHandler;
+import elocindev.teraphobia.forge.worldgen.SpawningHandler;
 
 @Mixin(ServerLevel.class)
 public class ServerWorldMixin { 
     @Inject(method = "addEntity", at = @At("HEAD"), remap = false, cancellable = true)
-	private void blacklist(Entity entity, CallbackInfoReturnable<Boolean> info) {
+	private void teraphobia_blacklistEntities(Entity entity, CallbackInfoReturnable<Boolean> info) {
         if (SpawningHandler.shouldBeRemoved((ServerLevel)(Object)this, entity)) {
             entity.remove(RemovalReason.DISCARDED);
         }

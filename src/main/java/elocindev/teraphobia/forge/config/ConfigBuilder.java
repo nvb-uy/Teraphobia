@@ -24,15 +24,21 @@ public class ConfigBuilder {
             
             exampleConfig.dayonly_spawns_entity.add("any_mod:example_entity");
             exampleConfig.nightonly_spawns_entity.add("any_mod:example_entity");
-            exampleConfig.nightonly_spawns_modwide.add("some_mods_id");
+            exampleConfig.nightonly_spawns_modwide.add("mutationcraft");
+            exampleConfig.nightonly_spawns_modwide.add("kevin_trophy");
+            exampleConfig.nightonly_spawns_modwide.add("skinandbonesremastered");
+            exampleConfig.nightonly_spawns_modwide.add("born_in_chaos_v1");
+            exampleConfig.nightonly_spawns_modwide.add("boh");
+            exampleConfig.nightonly_spawns_modwide.add("mushys_fallen_monsters");
+
             exampleConfig.dayonly_spawns_modwide.add("some_mods_id");
 
-            exampleConfig.mutationcraft_spawn_weight = 1.0F;
-            exampleConfig.ryanzombies_spawn_weight = 1.0F;
-            exampleConfig.skinandbones_spawn_weight = 1.0F;
-            exampleConfig.borninchaos_spawn_weight = 1.0F;
+            exampleConfig.mutationcraft_spawn_weight = 0.3F;
+            exampleConfig.ryanzombies_spawn_weight = 0.5F;
+            exampleConfig.skinandbones_spawn_weight = 0.7F;
+            exampleConfig.borninchaos_spawn_weight = 0.6F;
             exampleConfig.theboxofhorrors_spawn_weight = 1.0F;
-            exampleConfig.fallenmonsters_spawn_weight = 1.0F;
+            exampleConfig.fallenmonsters_spawn_weight = 0.5F;
 
             exampleConfig.lunar_event_blacklist_entity.add("any_mod:example_entity");
             exampleConfig.lunar_event_blacklist_modwide.add("mutationcraft");
@@ -44,6 +50,15 @@ public class ConfigBuilder {
 
             exampleConfig.enable_creeper_cena = false;
             exampleConfig.ender_dragon_max_health = 600.0f;
+            
+            exampleConfig.overworld_only_spawns_modwide.add("mutationcraft");
+            exampleConfig.overworld_only_spawns_modwide.add("kevin_trophy");
+            exampleConfig.overworld_only_spawns_modwide.add("skinandbonesremastered");
+            exampleConfig.overworld_only_spawns_modwide.add("born_in_chaos_v1");
+            exampleConfig.overworld_only_spawns_modwide.add("boh");
+            exampleConfig.overworld_only_spawns_modwide.add("mushys_fallen_monsters");
+
+            exampleConfig.phanstasm_enable_stars = false;
 
             String defaultJson = BUILDER.toJson(exampleConfig);
             Files.writeString(file, defaultJson);
