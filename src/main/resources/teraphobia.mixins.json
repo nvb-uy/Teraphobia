@@ -6,8 +6,7 @@
   "mixins": [
     "ServerWorldMixin",
     "integrations.lunar_events.LunarHandlerMixin",
-    "integrations.creeper_cena.LivingEntityMixin",
-    "integrations.phantasm.StarFeatureMixin"
+    "integrations.creeper_cena.LivingEntityMixin"
   ],
   "client": [
   ],
