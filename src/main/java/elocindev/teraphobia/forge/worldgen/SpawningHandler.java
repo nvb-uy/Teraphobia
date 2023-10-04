@@ -1,5 +1,7 @@
 package elocindev.teraphobia.forge.worldgen;
 
+import java.util.Random;
+
 import elocindev.teraphobia.forge.Teraphobia;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Entity.RemovalReason;
@@ -8,7 +10,8 @@ import net.minecraft.world.level.Level;
 
 public class SpawningHandler {
     public static boolean shouldBeRemoved(Level world, Entity entity) {
-        float random = world.random.nextFloat();
+        float random = new Random().nextFloat();
+        
         String id = EntityType.getKey(entity.getType()).toString();
             
         if (Teraphobia.Config.removed_entities.contains(id)) return removed(entity);
