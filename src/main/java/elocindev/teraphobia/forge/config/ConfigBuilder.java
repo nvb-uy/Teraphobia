@@ -58,7 +58,7 @@ public class ConfigBuilder {
             exampleConfig.overworld_only_spawns_modwide.add("boh");
             exampleConfig.overworld_only_spawns_modwide.add("mushys_fallen_monsters");
 
-            exampleConfig.phanstasm_enable_stars = false;
+            exampleConfig.always_communicate = false;
 
             String defaultJson = BUILDER.toJson(exampleConfig);
             Files.writeString(file, defaultJson);

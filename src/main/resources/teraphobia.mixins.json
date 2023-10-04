@@ -6,9 +6,11 @@
   "mixins": [
     "ServerWorldMixin",
     "integrations.lunar_events.LunarHandlerMixin",
-    "integrations.creeper_cena.LivingEntityMixin"
+    "integrations.creeper_cena.LivingEntityMixin",
+    "integrations.aether.PortalMixin"
   ],
   "client": [
+    "integrations.aether.client.FogMixin"
   ],
   "minVersion": "0.8"
 }
