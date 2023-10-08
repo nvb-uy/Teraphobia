@@ -9,6 +9,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import com.lgow.endofherobrine.entity.EntityInit;
 import com.lgow.endofherobrine.entity.herobrine.boss.HerobrineBoss;
 
+import elocindev.teraphobia.forge.Teraphobia;
 import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
@@ -53,8 +54,8 @@ public class HerobrineMixin {
             }
         }
 
-        if (inst.tickCount % 200 == 0 && inst.getMaxHealth() / 2 < inst.getHealth()) {
-            if (new Random().nextFloat() < 0.3f) {
+        if (inst.tickCount % Teraphobia.Config.herobrine_minion_spawn_rate == 0 && inst.getMaxHealth() / 2 < inst.getHealth()) {
+            if (new Random().nextFloat() < Teraphobia.Config.herobrine_minion_spawn_chance) {
                 spawnSmallMinionGroup(inst.level, inst.getX(), inst.getY(), inst.getZ());
             }
 
