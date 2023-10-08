@@ -60,6 +60,10 @@ public class ConfigBuilder {
 
             exampleConfig.always_communicate = false;
 
+            exampleConfig.aether_sins.add("sonsofsins:");
+
+            exampleConfig.aether_infected_ghast_weight = 0.5F;
+
             String defaultJson = BUILDER.toJson(exampleConfig);
             Files.writeString(file, defaultJson);
         }

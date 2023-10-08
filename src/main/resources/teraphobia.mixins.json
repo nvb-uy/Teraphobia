@@ -7,7 +7,8 @@
     "ServerWorldMixin",
     "integrations.lunar_events.LunarHandlerMixin",
     "integrations.creeper_cena.LivingEntityMixin",
-    "integrations.aether.PortalMixin"
+    "integrations.aether.PortalMixin",
+    "integrations.aether.InfectedEnviromentMixin"
   ],
   "client": [
     "integrations.aether.client.FogMixin"

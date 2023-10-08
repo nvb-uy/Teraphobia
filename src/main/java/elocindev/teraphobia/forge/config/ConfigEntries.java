@@ -21,4 +21,6 @@ public class ConfigEntries {
   public float ender_dragon_max_health = 600.0f;
   public List<String> overworld_only_spawns_modwide = new ArrayList<>();
   public boolean always_communicate = false;
+  public List<String> aether_sins = new ArrayList<>();
+  public float aether_infected_ghast_weight = 0.5F;
 }
