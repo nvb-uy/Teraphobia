@@ -1,5 +1,5 @@
 {
-  "required": false,
+  "required": true,
   "package": "elocindev.teraphobia.forge.mixin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "teraphobia.refmap.json",
@@ -8,7 +8,8 @@
     "integrations.lunar_events.LunarHandlerMixin",
     "integrations.creeper_cena.LivingEntityMixin",
     "integrations.aether.PortalMixin",
-    "integrations.aether.InfectedEnviromentMixin"
+    "integrations.aether.InfectedEnviromentMixin",
+    "integrations.herobrine.HerobrineMixin"
   ],
   "client": [
     "integrations.aether.client.FogMixin"

@@ -6,8 +6,6 @@ import elocindev.teraphobia.forge.registry.GameruleRegistry;
 import elocindev.teraphobia.forge.registry.PacketRegistry;
 import elocindev.teraphobia.forge.worldgen.SpawningHandler;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
@@ -30,11 +28,6 @@ public class FallbackEvent {
     @SubscribeEvent
     public static void fallbackSpawnEvent(EntityJoinLevelEvent event) {
         if (event.getLevel().isClientSide()) return;
-
-        if (event.getEntity() instanceof EnderDragon dragon) {
-            dragon.getAttribute(Attributes.MAX_HEALTH).setBaseValue(Teraphobia.Config.ender_dragon_max_health);
-            dragon.setHealth(Teraphobia.Config.ender_dragon_max_health);
-        }
 
         if (SpawningHandler.shouldBeRemoved(event.getEntity().getLevel(), event.getEntity())) {
             event.setCanceled(true);

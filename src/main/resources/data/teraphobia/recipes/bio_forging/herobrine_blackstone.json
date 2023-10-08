@@ -1,0 +1,13 @@
+{
+    "type":"biomancy:bio_forging",
+    "bio_forge_tab":"biomancy:misc",
+    "ingredients": [
+        { "count":64,"item":"minecraft:blackstone" },
+        { "count":1,"item":"sons_of_sins:butcher_carcass" },
+        { "count":1,"item":"sons_of_sins:bloody_puddle" },
+        { "count":1,"item":"sons_of_sins:wistiver_jaws" },
+        { "count":1,"item":"sons_of_sins:prowler_s_hand" }
+    ],
+    "nutrientsCost":400,
+    "result": { "item":"endofherobrine:blackstone_totem" }
+}

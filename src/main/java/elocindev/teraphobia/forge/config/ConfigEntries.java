@@ -23,4 +23,9 @@ public class ConfigEntries {
   public boolean always_communicate = false;
   public List<String> aether_sins = new ArrayList<>();
   public float aether_infected_ghast_weight = 0.5F;
+  public boolean herobrine_spawn_only_in_aether = true;
+  public float herobrine_max_health = 1200.0f;
+  public float herobrine_armor = 6.0f;
+  public int herobrine_minion_spawn_rate = 200;
+  public float herobrine_minion_spawn_chance = 0.3f;
 }

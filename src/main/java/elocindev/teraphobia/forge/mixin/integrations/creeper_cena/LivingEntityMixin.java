@@ -8,8 +8,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import elocindev.teraphobia.forge.Teraphobia;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity.RemovalReason;
+import net.minecraft.world.entity.monster.Creeper;
 
-@Mixin(LivingEntity.class)
+@Mixin(Creeper.class)
 public class LivingEntityMixin {
     // Thanks forge, your living tick event is useless and doesn't work
     @Inject(at = @At("HEAD"), method = "tick")
