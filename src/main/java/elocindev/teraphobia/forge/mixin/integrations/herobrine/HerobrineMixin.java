@@ -37,11 +37,13 @@ public class HerobrineMixin {
             bossEvent.setProgress(1.0F - (float)onSpawn / 220.0F);
             if (onSpawn <= 0) {
                 inst.level.explode(inst, inst.getX(), inst.getY(), inst.getZ(), 7.0F, BlockInteraction.DESTROY);
+        
                 if (!inst.isSilent()) {
                     inst.level.globalLevelEvent(1023, inst.blockPosition(), 0);
                 }
 
                 inst.setHealth(inst.getMaxHealth());
+                spawnSmallMinionGroup(inst.level, inst.getX(), inst.getY(), inst.getZ());
             }
 
             inst.setInvulnerableTicks(onSpawn);
