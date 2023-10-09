@@ -5,6 +5,7 @@ import com.github.elenterius.biomancy.init.ModBlocks;
 import com.lgow.endofherobrine.block.TotemBlock;
 
 import elocindev.teraphobia.forge.Teraphobia;
+import elocindev.teraphobia.forge.api.TeraphobiaAPI;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -17,7 +18,14 @@ public class InteractionEvents {
 
     @SubscribeEvent
     public static void onInteract(PlayerInteractEvent.RightClickBlock event) {
+        if (event.getLevel().isClientSide()) return;
+
         if (event.getItemStack().getItem().equals(Items.NETHER_STAR) && event.getLevel().getBlockState(event.getPos()).getBlock() instanceof TotemBlock) {
+            if (!TeraphobiaAPI.isAetherInfected(event.getLevel()) && Teraphobia.Config.herobrine_spawn_only_if_not_purged) {
+                event.getEntity().displayClientMessage(Component.literal("The totem cannot feel any vile force."), true);
+                event.setCanceled(true);
+            }
+            
             if (Teraphobia.Config.herobrine_spawn_only_in_aether && !event.getLevel().dimension().equals(AetherDimensions.AETHER_LEVEL)) {
                 event.getEntity().displayClientMessage(Component.literal("Herobrine cannot be summoned in this dimension."), true);
                 event.setCanceled(true);

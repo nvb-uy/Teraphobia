@@ -13,7 +13,11 @@ public class SpawningHandler {
         float random = new Random().nextFloat();
         
         String id = EntityType.getKey(entity.getType()).toString();
-            
+        
+        if (world.dimension().equals(Level.OVERWORLD) && id.startsWith("sons_of_sins")) {
+            return removed(entity);
+        } 
+
         if (Teraphobia.Config.removed_entities.contains(id)) return removed(entity);
         
         if (!world.dimension().equals(Level.OVERWORLD)) {

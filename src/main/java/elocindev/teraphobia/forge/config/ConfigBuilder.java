@@ -67,6 +67,7 @@ public class ConfigBuilder {
             exampleConfig.sinful_totem_require_full = true;
             
             exampleConfig.herobrine_spawn_only_in_aether = true;
+            exampleConfig.herobrine_spawn_only_if_not_purged = true;
             exampleConfig.herobrine_max_health = 1200.0f;
             exampleConfig.herobrine_armor = 6.0f;
             exampleConfig.herobrine_minion_spawn_rate = 200;

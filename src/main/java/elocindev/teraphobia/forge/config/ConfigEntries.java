@@ -25,6 +25,7 @@ public class ConfigEntries {
   public float aether_infected_ghast_weight = 0.5F;
   public boolean sinful_totem_require_full = true;
   public boolean herobrine_spawn_only_in_aether = true;
+  public boolean herobrine_spawn_only_if_not_purged = true;
   public float herobrine_max_health = 1200.0f;
   public float herobrine_armor = 6.0f;
   public int herobrine_minion_spawn_rate = 200;
