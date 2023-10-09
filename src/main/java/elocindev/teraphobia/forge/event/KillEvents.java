@@ -4,6 +4,7 @@ import com.aetherteam.aether.data.resources.registries.AetherDimensions;
 import com.lgow.endofherobrine.entity.herobrine.boss.HerobrineBoss;
 
 import elocindev.teraphobia.forge.api.TeraphobiaAPI;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
@@ -27,16 +28,21 @@ public class KillEvents {
 
                 LightningBolt lightningboltentity = EntityType.LIGHTNING_BOLT.create(herobrine.level);
                 lightningboltentity.moveTo(herobrine.getX(), herobrine.getY(), herobrine.getZ());
-                lightningboltentity.setVisualOnly(true);
-
 
                 herobrine.level.addFreshEntity(lightningboltentity);
+
+                level.getPlayers(null).forEach(player -> {
+                        player.sendSystemMessage(Component.literal("\u00A7cThe Aether has been purged from Herobrine's influence."));
+                });
             }
         } else if (event.getEntity() instanceof EnderDragon dragon) {
             if (!TeraphobiaAPI.isAetherAccessible(dragon.getLevel())) {
                 TeraphobiaAPI.setAetherAccessible(dragon.getLevel(), true);
 
-                
+                if (dragon.getLevel() instanceof ServerLevel level)
+                    level.getPlayers(null).forEach(player -> {
+                        player.sendSystemMessage(Component.literal("\u00A7cThe Aether's gates are no longer influenced by the Ender Dragon."));
+                    });
             }
         }
     }
