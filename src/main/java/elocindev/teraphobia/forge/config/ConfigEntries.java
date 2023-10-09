@@ -28,4 +28,5 @@ public class ConfigEntries {
   public float herobrine_armor = 6.0f;
   public int herobrine_minion_spawn_rate = 200;
   public float herobrine_minion_spawn_chance = 0.3f;
+  public float herobrine_lightning_chance = 0.1f;
 }

@@ -69,6 +69,7 @@ public class ConfigBuilder {
             exampleConfig.herobrine_armor = 6.0f;
             exampleConfig.herobrine_minion_spawn_rate = 200;
             exampleConfig.herobrine_minion_spawn_chance = 0.3f;
+            exampleConfig.herobrine_lightning_chance = 0.1f;
 
             String defaultJson = BUILDER.toJson(exampleConfig);
             Files.writeString(file, defaultJson);
