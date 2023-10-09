@@ -28,7 +28,6 @@ public class KillEvents {
 
 
                 herobrine.level.addFreshEntity(lightningboltentity);
-
             }
         }
     }

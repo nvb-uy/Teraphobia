@@ -64,6 +64,8 @@ public class ConfigBuilder {
 
             exampleConfig.aether_infected_ghast_weight = 0.5F;
 
+            exampleConfig.sinful_totem_require_full = true;
+            
             exampleConfig.herobrine_spawn_only_in_aether = true;
             exampleConfig.herobrine_max_health = 1200.0f;
             exampleConfig.herobrine_armor = 6.0f;
