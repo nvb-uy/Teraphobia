@@ -16,8 +16,9 @@ public class LivingEntityMixin {
     @Inject(at = @At("HEAD"), method = "tick")
     // This removes some meme "Creeper cena" that plays the john cena song when exploding, funny, but not fit for Fear Nightfall
     public void teraphobia_removeCreeperCena(CallbackInfo info) {
-        if (!Teraphobia.Config.enable_creeper_cena && ((LivingEntity)(Object)this).getDisplayName().getString().toLowerCase().endsWith("cena")) {
-            ((LivingEntity)(Object)this).remove(RemovalReason.DISCARDED);
-        }
+        if (((LivingEntity)(Object)this) instanceof Creeper)
+            if (!Teraphobia.Config.enable_creeper_cena && ((LivingEntity)(Object)this).getDisplayName().getString().toLowerCase().endsWith("cena")) {
+                ((LivingEntity)(Object)this).remove(RemovalReason.DISCARDED);
+            }
     }
 }

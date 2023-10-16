@@ -1,5 +1,6 @@
 package elocindev.teraphobia.forge.api;
 
+import elocindev.teraphobia.forge.Teraphobia;
 import elocindev.teraphobia.forge.network.SyncStatusesS2CPacket;
 import elocindev.teraphobia.forge.registry.GameruleRegistry;
 import elocindev.teraphobia.forge.registry.PacketRegistry;
@@ -10,11 +11,11 @@ import net.minecraft.world.level.Level;
 public class TeraphobiaAPI {
     
     public static boolean isAetherInfected(Level level) {
-        return level.getGameRules().getBoolean(GameruleRegistry.AETHERINFECTED);
+        return Teraphobia.INFECTION_STATUS;
     }
 
     public static boolean isAetherAccessible(Level level) {
-        return level.getGameRules().getBoolean(GameruleRegistry.AETHERAVAILABLE);
+        return Teraphobia.AVAILABLE_STATUS;
     }
 
     public static void setAetherInfected(Level level, boolean infected) {
@@ -26,12 +27,12 @@ public class TeraphobiaAPI {
     }
 
     public static void sendInfectionSyncPackets(ServerLevel level) {
-        sendInfectionSyncPackets(level, level.getGameRules().getBoolean(GameruleRegistry.AETHERINFECTED));
+        sendInfectionSyncPackets(level, Teraphobia.INFECTION_STATUS, Teraphobia.AVAILABLE_STATUS);
     }
 
-    public static void sendInfectionSyncPackets(ServerLevel level, boolean infected) {
+    public static void sendInfectionSyncPackets(ServerLevel level, boolean infected, boolean available) {
         level.getPlayers(null).forEach(player -> {
-            PacketRegistry.sendToPlayer(new SyncStatusesS2CPacket(infected), (ServerPlayer) player);
+            PacketRegistry.sendToPlayer(new SyncStatusesS2CPacket(infected, available), (ServerPlayer) player);
         });
     }
 }

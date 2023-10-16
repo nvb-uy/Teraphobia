@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import com.aetherteam.aether.data.resources.registries.AetherDimensions;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-import elocindev.teraphobia.forge.client.TeraphobiaClientStates;
+import elocindev.teraphobia.forge.Teraphobia;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -27,7 +27,7 @@ public class FogMixin {
 		if (world == null || client.player == null || !camera.getFluidInCamera().equals(FogType.NONE)) return;
 
 		if (world.dimension().equals(AetherDimensions.AETHER_LEVEL)
-        && TeraphobiaClientStates.INFECTION) {
+        && Teraphobia.INFECTION_STATUS) {
 			RenderSystem.setShaderFogStart(Mth.lerp(1.0f, vanillaFogStart(viewDistance), 0f));
 			RenderSystem.setShaderFogEnd(Mth.lerp(1.0f, viewDistance, viewDistance / 3));
 		}

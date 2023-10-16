@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import com.aetherteam.aether.block.portal.AetherPortalBlock;
 
-import elocindev.teraphobia.forge.registry.GameruleRegistry;
+import elocindev.teraphobia.forge.Teraphobia;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -21,7 +21,7 @@ import net.minecraft.world.level.block.state.BlockState;
 public class PortalMixin {
     @Inject(method = "entityInside", at = @At("HEAD"), cancellable = true)
     public void teraphobia_disableAether(BlockState state, Level level, BlockPos pos, Entity entity, CallbackInfo info) {
-        if (!level.isClientSide() && !level.getGameRules().getBoolean(GameruleRegistry.AETHERAVAILABLE)) {
+        if (!level.isClientSide() && !Teraphobia.AVAILABLE_STATUS) {
             if (entity instanceof Player player) {
                 player.displayClientMessage(Component.literal("\u00A7cAn unknown force is preventing you from going through."), true);
                 if (!player.isCreative()) {

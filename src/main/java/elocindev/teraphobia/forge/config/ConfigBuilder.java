@@ -58,7 +58,7 @@ public class ConfigBuilder {
             exampleConfig.overworld_only_spawns_modwide.add("boh");
             exampleConfig.overworld_only_spawns_modwide.add("mushys_fallen_monsters");
 
-            exampleConfig.always_communicate = false;
+            exampleConfig.always_communicate = true;
 
             exampleConfig.aether_sins.add("sons_of_sins");
 
@@ -72,7 +72,7 @@ public class ConfigBuilder {
             exampleConfig.herobrine_armor = 6.0f;
             exampleConfig.herobrine_minion_spawn_rate = 200;
             exampleConfig.herobrine_minion_spawn_chance = 0.3f;
-            exampleConfig.herobrine_lightning_chance = 0.1f;
+            exampleConfig.herobrine_lightning_chance = 0.4f;
 
             String defaultJson = BUILDER.toJson(exampleConfig);
             Files.writeString(file, defaultJson);

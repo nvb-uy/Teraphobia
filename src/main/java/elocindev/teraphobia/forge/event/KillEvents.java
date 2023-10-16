@@ -3,6 +3,7 @@ package elocindev.teraphobia.forge.event;
 import com.aetherteam.aether.data.resources.registries.AetherDimensions;
 import com.lgow.endofherobrine.entity.herobrine.boss.HerobrineBoss;
 
+import elocindev.teraphobia.forge.Teraphobia;
 import elocindev.teraphobia.forge.api.TeraphobiaAPI;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -24,7 +25,8 @@ public class KillEvents {
             if (herobrine.getLevel() instanceof ServerLevel level && level.dimension().equals(AetherDimensions.AETHER_LEVEL) && TeraphobiaAPI.isAetherInfected(herobrine.getLevel())) {
                 TeraphobiaAPI.setAetherInfected(level, false);
 
-                TeraphobiaAPI.sendInfectionSyncPackets(level, false);
+                Teraphobia.INFECTION_STATUS = false;
+                TeraphobiaAPI.sendInfectionSyncPackets(level, Teraphobia.INFECTION_STATUS, Teraphobia.AVAILABLE_STATUS);
 
                 LightningBolt lightningboltentity = EntityType.LIGHTNING_BOLT.create(herobrine.level);
                 lightningboltentity.moveTo(herobrine.getX(), herobrine.getY(), herobrine.getZ());
@@ -32,7 +34,7 @@ public class KillEvents {
                 herobrine.level.addFreshEntity(lightningboltentity);
 
                 level.getPlayers(null).forEach(player -> {
-                        player.sendSystemMessage(Component.literal("\u00A7cThe Aether has been purged from Herobrine's influence."));
+                        player.sendSystemMessage(Component.literal("\u00A76The Aether has been purged from Herobrine's influence."));
                 });
             }
         } else if (event.getEntity() instanceof EnderDragon dragon) {
@@ -40,8 +42,13 @@ public class KillEvents {
                 TeraphobiaAPI.setAetherAccessible(dragon.getLevel(), true);
 
                 if (dragon.getLevel() instanceof ServerLevel level)
+                    TeraphobiaAPI.sendInfectionSyncPackets(level, Teraphobia.INFECTION_STATUS, Teraphobia.AVAILABLE_STATUS);
+
+                Teraphobia.AVAILABLE_STATUS = true;
+
+                if (dragon.getLevel() instanceof ServerLevel level)
                     level.getPlayers(null).forEach(player -> {
-                        player.sendSystemMessage(Component.literal("\u00A7cThe Aether's gates are no longer influenced by the Ender Dragon."));
+                        player.sendSystemMessage(Component.literal("\u00A76The Aether's gates are no longer influenced by the Ender Dragon."));
                     });
             }
         }

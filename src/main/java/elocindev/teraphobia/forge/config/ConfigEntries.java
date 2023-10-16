@@ -20,7 +20,7 @@ public class ConfigEntries {
   public boolean enable_creeper_cena = false;
   public float ender_dragon_max_health = 600.0f;
   public List<String> overworld_only_spawns_modwide = new ArrayList<>();
-  public boolean always_communicate = false;
+  public boolean always_communicate = true;
   public List<String> aether_sins = new ArrayList<>();
   public float aether_infected_ghast_weight = 0.5F;
   public boolean sinful_totem_require_full = true;
@@ -30,5 +30,5 @@ public class ConfigEntries {
   public float herobrine_armor = 6.0f;
   public int herobrine_minion_spawn_rate = 200;
   public float herobrine_minion_spawn_chance = 0.3f;
-  public float herobrine_lightning_chance = 0.1f;
+  public float herobrine_lightning_chance = 0.4f;
 }

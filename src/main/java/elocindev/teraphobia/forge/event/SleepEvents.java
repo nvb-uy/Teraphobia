@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber
 public class SleepEvents {
+    
     @SubscribeEvent
     public static void onSleep(SleepFinishedTimeEvent event) {
         event.setTimeAddition(event.getLevel().dayTime());
