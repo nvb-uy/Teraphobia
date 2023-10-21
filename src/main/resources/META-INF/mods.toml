@@ -20,7 +20,7 @@ The core mod of the Fear Nightfall modpack. Adds core functionality for the modp
     side="BOTH"
 [[dependencies.teraphobia]]
     modId="luna" 
-    mandatory=false 
+    mandatory=true 
     versionRange="[0,)" 
     ordering="NONE"
     side="CLIENT"
