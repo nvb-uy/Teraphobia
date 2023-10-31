@@ -4,7 +4,7 @@ license="All Rights Reserved"
 
 [[mods]] 
 modId="teraphobia" 
-version="1.0.0" 
+version="1.1.1" 
 displayName="Teraphobia" 
 logoFile="icon.png" 
 credits="https://github.com/nvb-uy/Teraphobia" 
@@ -20,7 +20,7 @@ The core mod of the Fear Nightfall modpack. Adds core functionality for the modp
     side="BOTH"
 [[dependencies.teraphobia]]
     modId="luna" 
-    mandatory=true 
+    mandatory=false 
     versionRange="[0,)" 
     ordering="NONE"
     side="CLIENT"

@@ -19,6 +19,6 @@ public class LivingEntityMixin {
         if (((LivingEntity)(Object)this) instanceof Creeper)
             if (!Teraphobia.Config.enable_creeper_cena && ((LivingEntity)(Object)this).getDisplayName().getString().toLowerCase().endsWith("cena")) {
                 ((LivingEntity)(Object)this).remove(RemovalReason.DISCARDED);
-            }
+        }
     }
 }

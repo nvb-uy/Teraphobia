@@ -7,10 +7,13 @@ import com.lgow.endofherobrine.block.TotemBlock;
 import elocindev.teraphobia.forge.Teraphobia;
 import elocindev.teraphobia.forge.api.TeraphobiaAPI;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event.Result;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber
@@ -57,6 +60,13 @@ public class InteractionEvents {
                     }
                 }
             }
+        }
+    }
+    
+    @SubscribeEvent
+    public static void removeItem(EntityItemPickupEvent event) {
+        if (EntityType.getKey(event.getItem().getType()).toString() == "fear_the_dark:leg_spike") {
+            event.setResult(Result.DENY);
         }
     }
 }

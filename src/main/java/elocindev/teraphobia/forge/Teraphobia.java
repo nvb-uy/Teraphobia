@@ -15,6 +15,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent.ServerTickEvent;
 import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -43,6 +44,11 @@ public class Teraphobia {
 		LOGGER.info("Loaded Teraphobia Config");
 
         PacketRegistry.register();
+
+        if (ModList.get().isLoaded("essential") && ModList.get().isLoaded("luna")) {
+            LOGGER.info("Essential is not supported with Luna.");
+            System.exit(805);
+        }
     }
 
     @Mod.EventBusSubscriber

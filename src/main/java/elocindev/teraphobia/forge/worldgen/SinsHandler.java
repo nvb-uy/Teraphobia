@@ -61,6 +61,8 @@ public class SinsHandler {
 
     private static void replaceWith(Entity target, EntityType<?> replaceWith, Level level) {
         var newEntity = replaceWith.create(level);
+
+        if (newEntity == null) return;
         
         newEntity.setPos(target.getX(), target.getY(), target.getZ());
         target.remove(RemovalReason.DISCARDED);
