@@ -12,9 +12,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraftforge.eventbus.api.Event;
 
 @Mixin(WelcomingMSGProcedure.class)
-public abstract class RemoveWelcomeMessageMixin {
+public class RemoveWelcomeMessageMixin {
     @Inject(method = "execute(Lnet/minecraftforge/eventbus/api/Event;Lnet/minecraft/world/entity/Entity;)V", at = @At("HEAD"), cancellable = true, remap =  false)
-    private void teraphobia$removeWelcomeMessage(@Nullable Event event, Entity entity, CallbackInfo ci) {
+    private static void teraphobia$removeWelcomeMessage(@Nullable Event event, Entity entity, CallbackInfo ci) {
         ci.cancel();
     }
 }
