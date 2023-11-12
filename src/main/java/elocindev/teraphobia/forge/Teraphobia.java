@@ -29,7 +29,7 @@ public class Teraphobia {
     public static boolean INFECTION_STATUS = true;
     public static boolean AVAILABLE_STATUS = false;
 
-    public static final boolean DEBUG = true;
+    public static final boolean DEBUG = false;
 
     
     public Teraphobia() {

@@ -173,13 +173,13 @@ dependencies {
     implementation fg.deobf("curse.maven:biomancy-492939:4748129")
     implementation fg.deobf("curse.maven:geckolib-388172:4407241")
     implementation fg.deobf("curse.maven:sons-of-sins-538529:4098157")
+    implementation fg.deobf("curse.maven:midnight-madness-847812:4801908")
 
     runtimeOnly fg.deobf("curse.maven:spark-361579:4505309")
 }
 
 mixin {
     // MixinGradle Settings
-    add sourceSets.main, "mixins.${mod_id}.refmap.json"
     config "${mod_id}.mixins.json"
 }
 
