@@ -47,7 +47,6 @@ public class Teraphobia {
 
         if (ModList.get().isLoaded("essential") && ModList.get().isLoaded("luna")) {
             LOGGER.info("Essential is not supported with Luna.");
-            System.exit(805);
         }
     }
 
