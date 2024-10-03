@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "biomancy:block/tubular_flesh_end",
-    "side": "endofherobrine:block/blackstone_totem_lit",
-    "particle": "biomancy:block/tubular_flesh_end"
-  }
-}

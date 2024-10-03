@@ -4,13 +4,13 @@ license="All Rights Reserved"
 
 [[mods]] 
 modId="teraphobia" 
-version="1.1.1" 
-displayName="Teraphobia" 
+version="2.0.0" 
+displayName="Teraphobia: Remains of Chaos" 
 logoFile="icon.png" 
 credits="https://github.com/nvb-uy/Teraphobia" 
 authors="ElocinDev" 
 description='''
-The core mod of the Fear Nightfall modpack. Adds core functionality for the modpack.
+The core mod of the Fear Nightfall: Remains of Chaos. Adds core functionality for the modpack.
 '''
 [[dependencies.teraphobia]]
     modId="forge" 
