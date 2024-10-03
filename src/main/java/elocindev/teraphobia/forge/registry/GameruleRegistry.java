@@ -8,8 +8,8 @@ import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 
 public class GameruleRegistry {
     
-    public static final GameRules.Key<GameRules.BooleanValue> AETHERAVAILABLE = GameRules.register("aetherAvailable", GameRules.Category.MISC, register(false));
-    public static final GameRules.Key<GameRules.BooleanValue> AETHERINFECTED = GameRules.register("aetherInfected", GameRules.Category.MISC, register(true));
+    // public static final GameRules.Key<GameRules.BooleanValue> AETHERAVAILABLE = GameRules.register("aetherAvailable", GameRules.Category.MISC, register(false));
+    // public static final GameRules.Key<GameRules.BooleanValue> AETHERINFECTED = GameRules.register("aetherInfected", GameRules.Category.MISC, register(true));
 
     @SuppressWarnings("unchecked")
 	public static Type<GameRules.BooleanValue> register(boolean defaultValue) {
