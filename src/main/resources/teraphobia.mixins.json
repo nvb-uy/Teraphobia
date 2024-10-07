@@ -3,6 +3,7 @@
   "package": "elocindev.teraphobia.forge.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "end.DisableDragonMixin"
   ],
   "client": [
   ],

@@ -4,6 +4,7 @@ package elocindev.teraphobia.forge;
 import java.util.logging.Logger;
 
 import elocindev.teraphobia.forge.registry.GameruleRegistry;
+import elocindev.teraphobia.forge.registry.ItemRegistry;
 import elocindev.teraphobia.forge.registry.PacketRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -28,6 +29,7 @@ public class Teraphobia {
     private void setup(final FMLCommonSetupEvent event) {
 		LOGGER.info("Loaded Teraphobia Config");
 
+        ItemRegistry.register();
         PacketRegistry.register();
     }
 }
