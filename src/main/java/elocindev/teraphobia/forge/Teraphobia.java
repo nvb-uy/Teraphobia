@@ -4,9 +4,11 @@ package elocindev.teraphobia.forge;
 import java.util.logging.Logger;
 
 import elocindev.teraphobia.forge.registry.GameruleRegistry;
+import elocindev.teraphobia.forge.registry.ItemGroupRegistry;
 import elocindev.teraphobia.forge.registry.ItemRegistry;
 import elocindev.teraphobia.forge.registry.PacketRegistry;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -23,13 +25,17 @@ public class Teraphobia {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         MinecraftForge.EVENT_BUS.register(this);
 
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ItemRegistry.register(bus);
+        ItemGroupRegistry.register(bus);
+
         GameruleRegistry.register();
     }
 
     private void setup(final FMLCommonSetupEvent event) {
 		LOGGER.info("Loaded Teraphobia Config");
-
-        ItemRegistry.register();
+        
         PacketRegistry.register();
     }
 }
