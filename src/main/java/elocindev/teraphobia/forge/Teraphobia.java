@@ -3,6 +3,8 @@ package elocindev.teraphobia.forge;
 
 import java.util.logging.Logger;
 
+import elocindev.necronomicon.api.config.v1.NecConfigAPI;
+import elocindev.teraphobia.forge.config.TeraphobiaConfig;
 import elocindev.teraphobia.forge.registry.GameruleRegistry;
 import elocindev.teraphobia.forge.registry.ItemGroupRegistry;
 import elocindev.teraphobia.forge.registry.ItemRegistry;
@@ -26,6 +28,8 @@ public class Teraphobia {
         MinecraftForge.EVENT_BUS.register(this);
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        NecConfigAPI.registerConfig(TeraphobiaConfig.class);
 
         ItemRegistry.register(bus);
         ItemGroupRegistry.register(bus);

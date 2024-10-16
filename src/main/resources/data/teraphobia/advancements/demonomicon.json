@@ -1,0 +1,26 @@
+{
+    "display": {
+      "icon": {
+        "item": "ftbquests:book"
+      },
+      "title": "The Demonomicon",
+      "description": "Welcome to Fear Nightfall: Remains of Chaos",
+      "hidden": true,
+      "frame": "goal",
+      "show_toast": true,
+      "announce_to_chat": true
+    },
+    "criteria": {
+      "used_item": {
+        "trigger": "minecraft:using_item",
+        "conditions": {
+          "item": {
+            "item": "ftbquests:book"
+          }
+        }
+      }
+    },
+    "rewards": {
+      "experience": 20
+    }
+}
