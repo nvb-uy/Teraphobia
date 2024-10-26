@@ -15,7 +15,7 @@ public class ItemRegistry {
         new Item.Properties()
         .fireResistant()
         .rarity(Rarity.UNCOMMON)
-        .stacksTo(8)), 
+        .stacksTo(7)), 
         "chaos_essence");
 
 	private static RegistryObject<Item> reg(Item item, String id) {
