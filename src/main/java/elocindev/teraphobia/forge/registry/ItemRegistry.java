@@ -1,6 +1,8 @@
 package elocindev.teraphobia.forge.registry;
 
 import elocindev.teraphobia.forge.Teraphobia;
+import elocindev.teraphobia.forge.item.MarkOfChaos;
+import elocindev.teraphobia.forge.item.MarkOfChaosRecipe;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,14 +20,15 @@ public class ItemRegistry {
         .stacksTo(7)), 
         "chaos_essence");
 
-    public static final RegistryObject<Item> MARK_OF_CHAOS = reg(new Item(
+    public static final RegistryObject<Item> MARK_OF_CHAOS = reg(new MarkOfChaos(
         new Item.Properties()
         .fireResistant()
         .rarity(Rarity.UNCOMMON)
+        .durability(300)
         .stacksTo(1)), 
         "mark_of_chaos");
 
-    public static final RegistryObject<Item> MARK_OF_CHAOS_RECIPE = reg(new Item(
+    public static final RegistryObject<Item> MARK_OF_CHAOS_RECIPE = reg(new MarkOfChaosRecipe(
         new Item.Properties()
         .rarity(Rarity.UNCOMMON)
         .stacksTo(1)), 

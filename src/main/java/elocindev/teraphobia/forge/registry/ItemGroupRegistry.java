@@ -19,6 +19,8 @@ public class ItemGroupRegistry {
                     .title(Component.translatable("itemGroup.teraphobia.main"))
                     .displayItems((param, tab) -> {
                         tab.accept(ItemRegistry.CHAOS_ESSENCE.get());
+                        tab.accept(ItemRegistry.MARK_OF_CHAOS_RECIPE.get());
+                        tab.accept(ItemRegistry.MARK_OF_CHAOS.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {
