@@ -30,27 +30,25 @@ public class SpawnEvents {
 
     public static boolean shouldDisable(LivingEntity entity) {
         Level level = entity.level();
-        long dayTime = level.getDayTime() % 24000;
-        boolean isNight = dayTime >= 13000 && dayTime <= 23000;
-
+    
         String entityId = NecUtilsAPI.getEntityId(entity);
+        
 
-        if (!isNight) {
+        if (level.isDay()) {
             for (String pattern : TeraphobiaConfig.INSTANCE.night_only_spawn) {
                 if (entityId.matches(pattern)) {
                     return true;
                 }
             }
         }
-
+        
         long day = level.getDayTime() / 24000;
-
         for (TimedSpawnHolder holder : TeraphobiaConfig.INSTANCE.timed_spawns) {
             if (day < holder.minDay && entityId.equals(holder.entity)) {
                 return true;
             }
         }
-
+    
         return false;
     }
 }
