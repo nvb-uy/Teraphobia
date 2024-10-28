@@ -1,0 +1,13 @@
+{
+    "type":"biomancy:bio_forging",
+    "bio_forge_tab":"biomancy:misc",
+    "ingredients": [
+        { "count":1,"item":"teraphobia:mark_of_chaos_recipe" },
+        { "count":4,"item":"teraphobia:chaos_essence" },
+        { "count":1,"item":"minecraft:skeleton_skull" },
+        { "count":8,"item":"biomancy:flesh_bits" },
+        { "count":3,"item":"biomancy:exotic_dust" }
+    ],
+    "nutrientsCost":4,
+    "result": { "item":"teraphobia:mark_of_chaos" }
+}
