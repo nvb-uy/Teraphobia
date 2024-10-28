@@ -9,7 +9,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -36,7 +40,14 @@ public class PortalShapeMixin {
             .map(entity -> (Player) entity)
             .anyMatch(player -> {
                 ItemStack mainHandItem = player.getMainHandItem();
-                return mainHandItem.getItem() == Items.FLINT_AND_STEEL;
+
+                boolean isValid = mainHandItem.getItem() == Items.FLINT_AND_STEEL;
+
+                if (isValid && player instanceof ServerPlayer ply) {
+                   ply.sendSystemMessage(Component.translatable("teraphobia.portal_unusable").setStyle(Style.EMPTY.withColor(ChatFormatting.RED)), true); 
+                }
+
+                return isValid;
             });
     }
 

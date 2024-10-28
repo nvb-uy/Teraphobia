@@ -1,4 +1,7 @@
 {
     "itemGroup.teraphobia.main": "Fear Nightfall Custom Content",
-    "item.teraphobia.chaos_essence" : "Essence of Chaos"
+    
+    "item.teraphobia.chaos_essence" : "Essence of Chaos",
+
+    "teraphobia.portal_unusable": "Progress through the campaign to find out how to use this portal."
 }
