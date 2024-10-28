@@ -2,6 +2,10 @@
     "itemGroup.teraphobia.main": "Fear Nightfall Custom Content",
     
     "item.teraphobia.chaos_essence" : "Essence of Chaos",
+    "item.teraphobia.mark_of_chaos_recipe" : "Recipe: Mark of Chaos",
+    "item.teraphobia.mark_of_chaos_recipe.tooltip" : "Found in Ancient Cities and Desert Temples, used to create a Mark of Chaos.",
+    "item.teraphobia.mark_of_chaos" : "Mark of Chaos",
+    "item.teraphobia.mark_of_chaos.tooltip" : "Used to open portals to other realms, made using Bio-Forging.",
 
     "teraphobia.portal_unusable": "Progress through the campaign to find out how to use this portal."
 }

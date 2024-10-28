@@ -18,6 +18,19 @@ public class ItemRegistry {
         .stacksTo(7)), 
         "chaos_essence");
 
+    public static final RegistryObject<Item> MARK_OF_CHAOS = reg(new Item(
+        new Item.Properties()
+        .fireResistant()
+        .rarity(Rarity.UNCOMMON)
+        .stacksTo(1)), 
+        "mark_of_chaos");
+
+    public static final RegistryObject<Item> MARK_OF_CHAOS_RECIPE = reg(new Item(
+        new Item.Properties()
+        .rarity(Rarity.UNCOMMON)
+        .stacksTo(1)), 
+        "mark_of_chaos_recipe");
+
 	private static RegistryObject<Item> reg(Item item, String id) {
 		return REGISTRY.register(id, () -> item);
 	}
