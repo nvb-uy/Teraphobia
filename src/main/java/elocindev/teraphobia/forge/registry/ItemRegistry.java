@@ -12,31 +12,26 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ItemRegistry {
     public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, Teraphobia.MODID);
-    
-    public static final RegistryObject<Item> CHAOS_ESSENCE = reg(new Item(
-        new Item.Properties()
-        .fireResistant()
-        .rarity(Rarity.UNCOMMON)
-        .stacksTo(7)), 
-        "chaos_essence");
 
-    public static final RegistryObject<Item> MARK_OF_CHAOS = reg(new MarkOfChaos(
-        new Item.Properties()
-        .fireResistant()
-        .rarity(Rarity.UNCOMMON)
-        .durability(300)
-        .stacksTo(1)), 
-        "mark_of_chaos");
+    public static final RegistryObject<Item> CHAOS_ESSENCE = REGISTRY.register("chaos_essence",
+        () -> new Item(new Item.Properties()
+            .fireResistant()
+            .rarity(Rarity.UNCOMMON)
+            .stacksTo(7))
+    );
 
-    public static final RegistryObject<Item> MARK_OF_CHAOS_RECIPE = reg(new MarkOfChaosRecipe(
-        new Item.Properties()
-        .rarity(Rarity.UNCOMMON)
-        .stacksTo(1)), 
-        "mark_of_chaos_recipe");
+    public static final RegistryObject<Item> MARK_OF_CHAOS = REGISTRY.register("mark_of_chaos",
+        () -> new MarkOfChaos(new Item.Properties()
+            .fireResistant()
+            .rarity(Rarity.UNCOMMON)
+            .durability(300))
+    );
 
-	private static RegistryObject<Item> reg(Item item, String id) {
-		return REGISTRY.register(id, () -> item);
-	}
+    public static final RegistryObject<Item> MARK_OF_CHAOS_RECIPE = REGISTRY.register("mark_of_chaos_recipe",
+        () -> new MarkOfChaosRecipe(new Item.Properties()
+            .rarity(Rarity.UNCOMMON)
+            .stacksTo(1))
+    );
 
     public static void register(IEventBus eventBus) {
         REGISTRY.register(eventBus);
