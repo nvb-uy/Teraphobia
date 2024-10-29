@@ -14,10 +14,12 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.portal.PortalShape;
 import net.minecraft.world.phys.AABB;
@@ -30,15 +32,26 @@ public class PortalShapeMixin {
     @Shadow
     private BlockPos bottomLeft;
 
+    @SuppressWarnings("null")
     private boolean hasNearbyPlayerWithFlintAndSteel(BlockPos pos) {
         Entity dummy = null;
+        if (level == null || level == Level.NETHER) return true;
+
         List<Entity> nearbyEntities = level.getEntities(dummy, 
-            new AABB(pos).inflate(12), 
+            new AABB(pos).inflate(128), 
             (Predicate<? super Entity>) entity -> entity instanceof Player);
+
+        if (nearbyEntities.isEmpty()) return true;
 
         return nearbyEntities.stream()
             .map(entity -> (Player) entity)
             .anyMatch(player -> {
+                if (player instanceof ServerPlayer serverPlayer && serverPlayer.getServer() != null && serverPlayer.getAdvancements()
+                .getOrStartProgress(serverPlayer.getServer().getAdvancements().getAdvancement(new ResourceLocation("minecraft:nether/root")))
+                .isDone()) {
+                    return true;
+                }
+
                 ItemStack mainHandItem = player.getMainHandItem();
 
                 boolean isValid = mainHandItem.getItem() == ItemRegistry.MARK_OF_CHAOS.get();

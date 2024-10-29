@@ -8,6 +8,7 @@ import elocindev.teraphobia.forge.config.TeraphobiaConfig;
 import elocindev.teraphobia.forge.registry.GameruleRegistry;
 import elocindev.teraphobia.forge.registry.ItemGroupRegistry;
 import elocindev.teraphobia.forge.registry.ItemRegistry;
+import elocindev.teraphobia.forge.registry.LootRegistry;
 import elocindev.teraphobia.forge.registry.PacketRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -35,6 +36,7 @@ public class Teraphobia {
         ItemGroupRegistry.register(bus);
 
         GameruleRegistry.register();
+        LootRegistry.register();
     }
 
     private void setup(final FMLCommonSetupEvent event) {
