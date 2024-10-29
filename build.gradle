@@ -36,7 +36,7 @@ dependencies {
     mappings loom.officialMojangMappings()
     forge "net.minecraftforge:forge:$project.forge_version"
 
-    implementation "maven.modrinth:necronomicon:${project.necronomicon_version}-forge"
+    modImplementation "maven.modrinth:necronomicon:${project.necronomicon_version}-forge"
 }
 
 processResources {
