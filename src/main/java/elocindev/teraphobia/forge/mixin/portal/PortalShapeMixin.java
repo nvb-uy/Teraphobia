@@ -43,7 +43,7 @@ public class PortalShapeMixin {
 
                 boolean isValid = mainHandItem.getItem() == ItemRegistry.MARK_OF_CHAOS.get();
 
-                if (isValid && player instanceof ServerPlayer ply) {
+                if (!isValid && player instanceof ServerPlayer ply) {
                    ply.sendSystemMessage(Component.translatable("teraphobia.portal_unusable").setStyle(Style.EMPTY.withColor(ChatFormatting.RED)), true); 
                 }
 

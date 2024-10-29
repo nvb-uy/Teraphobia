@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import elocindev.teraphobia.forge.registry.ItemRegistry;
 import net.minecraft.BlockUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -17,7 +18,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.portal.PortalForcer;
 import net.minecraft.world.phys.AABB;
 
@@ -36,7 +36,7 @@ public class PortalIgniterMixin {
             .map(entity -> (Player) entity)
             .anyMatch(player -> {
                 ItemStack mainHandItem = player.getMainHandItem();
-                return mainHandItem.getItem() == Items.FLINT_AND_STEEL;
+                return mainHandItem.getItem() == ItemRegistry.MARK_OF_CHAOS.get();
             });
     }
 
