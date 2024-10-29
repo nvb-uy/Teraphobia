@@ -1,6 +1,6 @@
 {
     "type":"biomancy:bio_forging",
-    "bio_forge_tab":"biomancy:misc",
+    "bio_forge_tab":"biomancy:components",
     "ingredients": [
         { "count":8,"item":"biomancy:elastic_fibers" },
         { "count":1,"item":"minecraft:ender_pearl" },
