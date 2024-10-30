@@ -1,0 +1,10 @@
+{
+    "type":"biomancy:bio_forging",
+    "bio_forge_tab":"biomancy:machines",
+    "ingredients": [
+        { "count":8,"item":"eldritch_end:aberration_limb" },
+        { "count":2,"item":"biomancy:exotic_dust" }
+    ],
+    "nutrientsCost": 5,
+    "result": { "item":"eldritch_end:abysmal_pedestal" }
+}

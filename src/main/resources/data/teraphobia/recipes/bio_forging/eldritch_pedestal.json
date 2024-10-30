@@ -1,0 +1,12 @@
+{
+    "type":"biomancy:bio_forging",
+    "bio_forge_tab":"biomancy:machines",
+    "ingredients": [
+        { "count":4,"item":"eldritch_end:ominous_eye" },
+        { "count":1,"item":"eldritch_end:abysmal_pedestal" },
+        { "count":4,"item":"minecraft:chain" },
+        { "count":8,"item":"biomancy:exotic_dust" }
+    ],
+    "nutrientsCost": 5,
+    "result": { "item":"eldritch_end:eldritch_pedestal" }
+}
